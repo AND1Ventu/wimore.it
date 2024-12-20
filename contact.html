@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti - Wimore</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
+  <style>
+    .hover-effect:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @media (max-width: 768px) {
+      #desktop-menu {
+        display: none;
+      }
+      #hamburger-button {
+        display: block;
+      }
+    }
+    @media (min-width: 769px) {
+      #mobile-menu {
+        display: none;
+      }
+      #hamburger-button {
+        display: none;
+      }
+    }
+    ul li a {
+      font-size: 1.25rem; /* Increase font size */
+      padding: 0.5rem 1rem; /* Add spacing */
+    }
+    #hamburger-button {
+      margin: 0 auto; /* Center the hamburger menu button */
+    }
+  </style>
+</head>
+<body class="font-sans bg-gray-300">
+  <!-- Header -->
+  <header class="bg-[#000000] text-white bg-blue-200 shadow-md fade-in">
+    <div class="container mx-auto flex flex-wrap items-center justify-between py-4 px-6">
+      <div class="w-full text-center">
+        <img src="static/media/img/logo.png" alt="Wimore Logo" class="h-20 mx-auto hover-effect">
+      </div>
+      <button id="hamburger-button" class="text-white md:hidden" onclick="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <nav id="desktop-menu" class="hidden md:flex mt-4 w-full justify-center space-x-10 text-white">
+        <ul class="flex">
+          <li><a href="#chi-siamo" class="hover:text-[#7AC943] hover-effect">Chi Siamo</a></li>
+          <li><a href="#servizi" class="hover:text-[#7AC943] hover-effect">Servizi</a></li>
+          <li><a href="#lifestyle" class="hover:text-[#7AC943] hover-effect">Lifestyle</a></li>
+          <li><a href="#faq" class="hover:text-[#7AC943] hover-effect">FAQ</a></li>
+          <li><a href="#contatti" class="hover:text-[#7AC943] hover-effect">Contatti</a></li>
+        </ul>
+      </nav>
+      <nav id="mobile-menu" class="hidden md:hidden w-full mt-4">
+        <ul class="flex flex-col text-center space-y-4">
+          <li><a href="#chi-siamo" class="hover:text-[#7AC943] hover-effect">Chi Siamo</a></li>
+          <li><a href="#servizi" class="hover:text-[#7AC943] hover-effect">Servizi</a></li>
+          <li><a href="#lifestyle" class="hover:text-[#7AC943] hover-effect">Lifestyle</a></li>
+          <li><a href="#faq" class="hover:text-[#7AC943] hover-effect">FAQ</a></li>
+          <li><a href="#contatti" class="hover:text-[#7AC943] hover-effect">Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Form di Contatto -->
+  <section class="container mx-auto my-12 px-6">
+    <h2 class="text-3xl font-semibold text-center mb-8">Contattaci</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Form -->
+      <div class="bg-white shadow-md p-6 rounded">
+        <form action="#" method="POST">
+          <div class="mb-4">
+            <label for="name" class="block text-gray-700 font-semibold">Nome</label>
+            <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-md" placeholder="Il tuo nome" required>
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700 font-semibold">Email</label>
+            <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-md" placeholder="Il tuo email" required>
+          </div>
+          <div class="mb-4">
+            <label for="phone" class="block text-gray-700 font-semibold">Telefono</label>
+            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border rounded-md" placeholder="Il tuo numero di telefono" required>
+          </div>
+          <div class="mb-4">
+            <label for="message" class="block text-gray-700 font-semibold">Messaggio</label>
+            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border rounded-md" placeholder="Il tuo messaggio" required></textarea>
+          </div>
+          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-800 text-white py-2 rounded-md">Invia Richiesta</button>
+        </form>
+      </div>
+
+      <!-- Informazioni di Contatto -->
+      <div class="bg-gray-100 p-6 rounded shadow-md">
+        <h3 class="text-xl font-semibold mb-4">Informazioni di Contatto</h3>
+        <p class="mb-4">Puoi contattarci tramite i seguenti numeri o venire a trovarci di persona.</p>
+        <p><strong>Telefono:</strong> +39 0123 456 789</p>
+        <p><strong>Email:</strong> info@wimore.it</p>
+        <div class="mt-6">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509437!2d144.95373531531786!3d-37.81627974202161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d0f0b0c4484e!2sEnvato!5e0!3m2!1sit!2sit!4v1640095938082!5m2!1sit!2sit" 
+            width="100%" 
+            height="300" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#000000] text-gray-500 py-6">
+    <div class="container mx-auto text-center">
+      <p>© 2024 Wimore. Tutti i diritti riservati.</p>
+      <p>
+        <a href="#privacy" class="hover:text-[#7AC943]">Privacy</a> |
+        <a href="#cookies" class="hover:text-[#7AC943]">Cookies Policy</a> |
+        <a href="#trasparenza" class="hover:text-[#7AC943]">Trasparenza Tariffaria</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

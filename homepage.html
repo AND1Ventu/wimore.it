@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wimore</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <script>
+          function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+          }
+        </script>
+        <style>
+          .hover-effect:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+          }
+          .fade-in {
+            animation: fadeIn 1s ease-in;
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          @media (max-width: 768px) {
+            #desktop-menu {
+              display: none;
+            }
+            #hamburger-button {
+              display: block;
+            }
+          }
+          @media (min-width: 769px) {
+            #mobile-menu {
+              display: none;
+            }
+            #hamburger-button {
+              display: none;
+            }
+          }
+          ul li a {
+            font-size: 1.25rem; /* Increase font size */
+            padding: 0.5rem 1rem; /* Add spacing */
+          }
+          #hamburger-button {
+            margin: 0 auto; /* Center the hamburger menu button */
+          }
+        </style>
+      </head>
+      <body class="font-sans bg-gray-300">
+        <!-- Header -->
+        <header class="bg-[#000000] text-white bg-blue-200 shadow-md fade-in">
+          <div class="container mx-auto flex flex-wrap items-center justify-between py-4 px-6">
+            <div class="w-full text-center">
+              <img src="static/media/img/logo.png" alt="Wimore Logo" class="h-20 mx-auto hover-effect">
+            </div>
+            <button id="hamburger-button" class="text-white md:hidden" onclick="toggleMenu()">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <nav id="desktop-menu" class="hidden md:flex mt-4 w-full justify-center space-x-10 text-white">
+              <ul class="flex">
+                <li><a href="#chi-siamo" class="hover:text-[#7AC943] hover-effect">Chi Siamo</a></li>
+                <li><a href="#servizi" class="hover:text-[#7AC943] hover-effect">Servizi</a></li>
+                <li><a href="#lifestyle" class="hover:text-[#7AC943] hover-effect">Lifestyle</a></li>
+                <li><a href="#faq" class="hover:text-[#7AC943] hover-effect">FAQ</a></li>
+                <li><a href="#contatti" class="hover:text-[#7AC943] hover-effect">Contatti</a></li>
+              </ul>
+            </nav>
+            <nav id="mobile-menu" class="hidden md:hidden w-full mt-4">
+              <ul class="flex flex-col text-center space-y-4">
+                <li><a href="#chi-siamo" class="hover:text-[#7AC943] hover-effect">Chi Siamo</a></li>
+                <li><a href="#servizi" class="hover:text-[#7AC943] hover-effect">Servizi</a></li>
+                <li><a href="#lifestyle" class="hover:text-[#7AC943] hover-effect">Lifestyle</a></li>
+                <li><a href="#faq" class="hover:text-[#7AC943] hover-effect">FAQ</a></li>
+                <li><a href="#contatti" class="hover:text-[#7AC943] hover-effect">Contatti</a></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+
+  <!-- Hero Section -->
+  <section class="bg-cover bg-center h-screen text-white flex items-center justify-center" style="background-image: url('/hero-image.jpg');">
+    <div class="text-center fade-in">
+      <h1 class="text-4xl md:text-6xl font-bold">Innovazione e Connettività </br> su Misura per il Tuo Business</h1>
+      <p class="mt-4 text-lg md:text-xl">Scopri le nostre soluzioni per connettere il futuro</p>
+      <a href="#servizi" class="mt-6 inline-block bg-[#0072CE] hover:bg-[#005BAC] text-white px-6 py-3 rounded text-lg hover-effect">Scopri i Servizi</a>
+      <!-- Key Highlights -->
+      <section class="container mx-auto my-12 px-6 text-center fade-in">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white shadow-md p-6 rounded hover-effect">
+            <img src="/icons/affidabilita.png" alt="Affidabilità" class="h-16 mx-auto">
+            <h3 class="text-xl font-semibold mt-4">Affidabilità</h3>
+            <p class="text-gray-600 mt-2">Soluzioni stabili e sicure per il tuo business.</p>
+          </div>
+          <div class="bg-white shadow-md p-6 rounded hover-effect">
+            <img src="/icons/personalizzazione.png" alt="Soluzioni Personalizzate" class="h-16 mx-auto">
+            <h3 class="text-xl font-semibold mt-4">Soluzioni Personalizzate</h3>
+            <p class="text-gray-600 mt-2">Adattiamo i nostri servizi alle tue esigenze.</p>
+          </div>
+          <div class="bg-white shadow-md p-6 rounded hover-effect">
+            <img src="/icons/supporto.png" alt="Supporto H24" class="h-16 mx-auto">
+            <h3 class="text-xl font-semibold mt-4">Supporto H24</h3>
+            <p class="text-gray-600 mt-2">Assistenza dedicata sempre a tua disposizione.</p>
+          </div>
+        </div>
+      </section>
+      <!-- Area Clienti & Remote Support -->
+      <div class="mt-12 text-center">
+        <a href="#area-clienti" class="text-white bg-[#98FF98] hover:bg-[#7FFF7F] px-6 py-3 rounded text-lg hover-effect inline-block mr-4">Area Clienti</a>
+        <a href="#remote-support" class="text-white bg-[#FFA500] hover:bg-[#FF8C00] px-6 py-3 rounded text-lg hover-effect inline-block">Remote Support</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#000000] text-gray-500 bg-gray-100 py-6 fade-in">
+    <div class="container mx-auto text-center">
+      <div class="flex flex-wrap justify-center space-x-6 mb-4">
+        <a href="#chi-siamo" class="hover:text-[#7AC943] hover-effect">Chi Siamo</a>
+        <a href="#servizi" class="hover:text-[#7AC943] hover-effect">Servizi</a>
+        <a href="#faq" class="hover:text-[#7AC943] hover-effect">FAQ</a>
+        <a href="#contatti" class="hover:text-[#7AC943] hover-effect">Contatti</a>
+      </div>
+      <div class="mb-4">
+        <a href="#" class="text-[#7AC943] hover:text-white mx-2 hover-effect"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-[#7AC943] hover:text-white mx-2 hover-effect"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-[#7AC943] hover:text-white mx-2 hover-effect"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p>© 2024 Wimore. Tutti i diritti riservati.</p>
+      <p>
+        <a href="#privacy" class="hover:text-[#7AC943] hover-effect">Privacy</a> | <a href="#cookies" class="hover:text-[#7AC943] hover-effect">Cookies Policy</a> | <a href="#trasparenza" class="hover:text-[#7AC943] hover-effect">Trasparenza Tariffaria</a></p>
+    </div>
+  </footer>
+</body>
+</html>
